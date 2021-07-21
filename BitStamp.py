@@ -11,7 +11,7 @@ def getBitcoinPrice():
         priceFloat = float(json.loads(r.text)['last'])
         return priceFloat
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 def getXRPPrice():
     URL = 'https://www.bitstamp.net/api/v2/ticker_hour/xrpeur/'
     try:
@@ -19,7 +19,7 @@ def getXRPPrice():
         priceFloat = float(json.loads(r.text)['last'])
         return priceFloat
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 def getLitecoinPrice():
     URL = 'https://www.bitstamp.net/api/v2/ticker_hour/ltceur/'
@@ -28,7 +28,7 @@ def getLitecoinPrice():
         priceFloat = float(json.loads(r.text)['last'])
         return priceFloat
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 def getEthereumPrice():
     URL = 'https://www.bitstamp.net/api/v2/ticker_hour/etheur/'
@@ -37,17 +37,17 @@ def getEthereumPrice():
         priceFloat = float(json.loads(r.text)['last'])
         return priceFloat
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 while True:
-    print datetime.datetime.now()
-    print "Your coins are currently worth:"
-    print "Bitcoin  - " + str(getBitcoinPrice()) + "/BTC"
-    print "Ripple   - " + str(getXRPPrice()) + "/XRP"
-    print "Litecoin - " + str(getLitecoinPrice()) + "/LTC"
-    print "Ethereum - " + str(getEthereumPrice()) + "/ETH"
+    print(datetime.datetime.now())
+    print("Your coins are currently worth:") 
+    print("Bitcoin  - " + str(getBitcoinPrice()) + "/BTC")
+    print("Ripple   - " + str(getXRPPrice()) + "/XRP")
+    print("Litecoin - " + str(getLitecoinPrice()) + "/LTC")
+    print("Ethereum - " + str(getEthereumPrice()) + "/ETH")
 
-    print " "
+    print (" ")
     sleep(10)
 
 

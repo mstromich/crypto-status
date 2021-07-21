@@ -31,7 +31,7 @@ def getBitcoinPrice():
         price_float = priceFloat * btcAmount
         return price_float
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 def getXRPPrice():
     URL = 'https://www.bitstamp.net/api/v2/ticker_hour/xrpeur/'
     try:
@@ -40,7 +40,7 @@ def getXRPPrice():
         price_float = priceFloat * xrpAmount
         return price_float
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 def getLitecoinPrice():
     URL = 'https://bitbay.net/API/Public/LTCEUR/ticker.json'
@@ -50,7 +50,7 @@ def getLitecoinPrice():
         price_float = priceFloat * ltcAmount
         return price_float
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 def getEthereumPrice():
     URL = 'https://bitbay.net/API/Public/ETHEUR/ticker.json'
@@ -60,7 +60,7 @@ def getEthereumPrice():
         price_float = priceFloat * ethAmount
         return price_float
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 def getGamePrice():
     URL = 'https://bitbay.net/API/Public/GAMEEUR/ticker.json'
@@ -70,22 +70,19 @@ def getGamePrice():
         price_float = priceFloat * gamAmount
         return price_float
     except requests.ConnectionError:
-        print "Error querying Bitstamp API"
+        print("Error querying Bitstamp API")
 
 
 while True:
-    print datetime.datetime.now()
-    print "Your coins are currently worth:"
-    print "BitCoin  - EUR " + str(getBitcoinPrice())
-    print "XRP      - EUR " + str(getXRPPrice())
-    print "LiteCoin - EUR " + str(getLitecoinPrice())
-    print "Ethereum - EUR " + str(getEthereumPrice())
-    print "Game     - EUR " + str(getGamePrice())
-    print "-----------------------------"
+    print(datetime.datetime.now())
+    print("Your coins are currently worth:")
+    print("BitCoin  - EUR " + str(getBitcoinPrice()))
+    print("XRP      - EUR " + str(getXRPPrice()))
+    print("LiteCoin - EUR " + str(getLitecoinPrice()))
+    print("Ethereum - EUR " + str(getEthereumPrice()))
+    print("Game     - EUR " + str(getGamePrice()))
+    print("-----------------------------")
     cryptoTotal = getBitcoinPrice() + getXRPPrice() + getLitecoinPrice() + getEthereumPrice() + getGamePrice()
-    print "Total    - EUR",cryptoTotal
-    print " "
+    print("Total    - EUR",cryptoTotal)
+    print(" ")
     sleep(10)
-
-
-
